@@ -1,0 +1,20 @@
+#first we need to display the posts (pins) then accept comments below it
+
+<div class="display">
+	<p>Harding Moonglow's Car Listings:</p>
+	<img src="<%= @post.url %>">
+	<h4><%= @post.category %></h4>
+	<h4><%= @post.title %></h4>
+	<h4><%= @post.description %></h4>
+  <% @post.comments.each do |comment| %>
+    <p>Author: <%= comment.user.username %></p>
+    <p>Comment: <%= comment.body %></p>
+  <% end %>
+  <hr>
+  <strong>Send a message:</strong><br>
+  <form method="POST" action="/posts/<%= @posts.id %>/comments/new">
+    <textarea name="body" rows="3" cols="60" placeholder="Enter a message..."></textarea>
+    <input type="submit" value="Send Message">
+  </form>
+</div>
+

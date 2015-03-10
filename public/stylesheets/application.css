@@ -1,0 +1,30 @@
+body {
+	background-color: #768393;
+}
+h1	{
+	font-family: helvetica neue;
+	font-size: 25px;
+}
+form {
+	background-color: black;
+	padding: 20px;
+	border-radius: 10px;
+}
+label	{
+	margin: 0px 0px 0px 0px;
+	color: white;
+	font-family: helvetica neue;
+}
+img {
+	margin: 25px;
+	padding: 0px 0px 0px 0px;
+	height: 800px;
+	width: 600px;
+	border-radius: 100%;
+}
+button	{
+	margin: 15px 25px 25px 215px;
+	padding: 5px 10px 5px 10px;
+	font-family: helvetica neue;
+	font: 14px;
+}
