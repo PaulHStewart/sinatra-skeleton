@@ -33,11 +33,11 @@ get '/posts/:id' do
 	erb :post 
 end
 
-post '/posts/:id/comments/new' do
+post '/posts/:id/comments/new' do #this shows the comments on posts
 	comment = params[com]
 
 	post = Post.find(params[:id])
-	post.comments.create user_id: current_user.id body: comment
+	post.comments.create user_id: current_user.id, body: comment
 
 	redirect "/posts/#{params[:id]}"
 end
@@ -77,6 +77,15 @@ end
 
 post '/profile' do
 	redirect '/'
+end
+
+get '/profile/edit' do
+	current_user
+	erb :profile
+end
+
+post '/profile/edit' do
+
 end
 
 get '/posts/new' do
