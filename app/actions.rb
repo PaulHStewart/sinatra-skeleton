@@ -7,9 +7,14 @@ helpers do
 	end
 end
 
+before do
+	redirect '/login' if !current_user && request.path != '/login' && request.path != '/signup'
+end
+
 # Homepage (Root path)
 get '/' do
-  erb :index
+	@posts = Post.all.reverse
+  	erb :index
 end
 
 get '/login' do
@@ -93,14 +98,3 @@ post '/profile/edit' do
 	current_user.update first_name: first_name, last_name: last_name, email: email, password: password, gender: gender
 	redirect '/'
 end
-
-get '/posts/new' do
-
-
-end
-
-post '/posts/new' do
-
-
-end
-

@@ -1,1 +1,22 @@
-<h1>Home Page</h1>
+<h1>Harding Moonglow Home Page</h1>
+
+<section id="post-container">
+	<% @posts.each do |post| %>
+		<div class="post">
+			<img src="<%= post.url %>"><br>
+			<h2><%= post.title %></h2>
+		</div>
+	<% end %>
+</section>
+
+<a href="/posts/create" class="btn btn-success">Add a Post</a>
+
+#post-container {
+	-webkit-column-count: 3;
+	-webkit-column-gap: 12px;
+}
+
+.post {
+	margin: 10px;
+	width: 30%;
+}
