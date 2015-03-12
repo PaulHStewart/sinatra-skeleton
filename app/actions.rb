@@ -85,7 +85,13 @@ get '/profile/edit' do
 end
 
 post '/profile/edit' do
-
+	first_name = params[:first_name]
+	last_name = params[:last_name]
+	email = params[:email]
+	password = params[:password]
+	gender = params[:gender]
+	current_user.update first_name: first_name, last_name: last_name, email: email, password: password, gender: gender
+	redirect '/'
 end
 
 get '/posts/new' do

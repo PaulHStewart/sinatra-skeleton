@@ -4,27 +4,27 @@
 		<div class="col-md-1"></div>
 		<div class="col-md-5">
 			<h1 class="text-center">Add Profile to Harding Moonglow</h1>
-			<form>
 			  <form action="/profile/edit" method="post">
 			  <div class="form-group">
 			    <label for="exampleInputEmail1">Email address</label>
-			    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+			    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" value="<%= @current_user.email %>"> 
+			    <!--# this value fills in form with current user to edit-->
 			  </div>
 			  <div class="form-group">
 			    <label for="exampleInputPassword1">Password</label>
-			    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="psw">
+			    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="psw" value="<%= @current_user.password %>">
 			  </div>
 			  <div class="form-group">
 			    <label for="Gender">Gender</label>
-			    <input type="text" class="form-control" id="exampleInputGender2" placeholder="Male/Female" name="gender">
+			    <input type="text" class="form-control" id="exampleInputGender2" placeholder="Male/Female" name="gender" value="<%= @current_user.gender %>">
 			  </div>
 			  <div class="form-group">
 			    <label for="exampleInputName2">First Name</label>
-			    <input type="text" class="form-control" id="exampleInputFirstName2" placeholder="Jane" name="first_name">
+			    <input type="text" class="form-control" id="exampleInputFirstName2" placeholder="Jane" name="first_name" value="<%= @current_user.first_name %>">
 			  </div>
 			  <div class="form-group">
 			    <label for="exampleInputName2">Last Name</label>
-			    <input type="text" class="form-control" id="exampleInputLastName2" placeholder="Doe" name="last_name">
+			    <input type="text" class="form-control" id="exampleInputLastName2" placeholder="Doe" name="last_name" value="<%= @current_user.last_name %>">
 			  </div>
 			  <button type="submit" class="btn btn-default">Save Changes</button>
 			</form>
